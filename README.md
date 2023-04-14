@@ -58,3 +58,6 @@ U0 U64Inst(U64 inst)
   SetInst(opl2inst);
 }
 ```
+
+### Why is only 1 of the 9 possible instruments/operators supported?
+The <a href="https://tinkeros.github.io/WbTempleOS/Doc/Charter.html#l39">TempleOS charter says single-voice MIDI-like samples for sounds.</a>  You are free to call the write function to write any values to any registers and fully make use of all the OPL2 operators.  I did not do this by default because I did not want to make something overly complex that violated what Terry put in his TempleOS charter and nothing in TempleOS uses more than 1 sound at a time.
