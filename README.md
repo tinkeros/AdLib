@@ -5,8 +5,9 @@ Put `Midi.HH` and `OPL2.HC/ZC` in the same directory, if using real hardware (mo
 
 ### VM options:
 - VMware: It might just work, it did for me.
-- QEMU: For older versions of QEMU use `-soundhw adlib` for newer versions use `-audiodev alsa,id=snd0 -device adlib,audiodev=snd0` substituting alsa for your desired sound backend as appropriate.  
+- QEMU: For older versions of QEMU use `-soundhw adlib` for newer versions use `-audiodev alsa,id=snd0 -device adlib,audiodev=snd0` substituting alsa for your desired sound backend as appropriate.
 - HyperV/VirtualBox: no OPL2 support
+- Passthru of a real hardware device such as an OPL2LPT or serial OPL device to a VM is a possible option, but is an advanced setup beyond the scope of this document.
 
 ### Real hardware bare-metal options:
 - Parallel port: This can also be used with an <a href="https://www.serdashop.com/OPL2LPT">OPL2LPT</a>/<a href="https://www.serdashop.com/OPL3LPT">OPL3LPT</a> connected via the parallel port or a cheaper <a href="https://github.com/zjuyzj/OPL2LPT-Replica">clone OPL2LPT</a>.  To do this change the `#define ISA_OPL` to `#define OPL2LPT` in `OPL.HC/ZC` and set the `#define LPT_IOPORT_OPL_BASE` value as appropriate for your parallel port.  Note: You need a real 5V parallel port, a USB to Parallel Port will not work and a PCIe Parallel Port card also will very likely not work.
