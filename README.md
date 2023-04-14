@@ -1,4 +1,4 @@
-## AdLib sound for TempleOS/TinkerOS/ZealOS for VMs and real hardware with 2^64 different instruments
+## AdLib sound for TempleOS/TinkerOS/ZealOS for VMs and real hardware with 2^64 different 64-bit instruments
 
 ### Using the driver
 Put `Midi.HH` and `OPL2.HC/ZC` in the same directory, if using real hardware (modify `OPL2.HC/ZC` as described below) and run `#include "OPL2"`.  Now every sound the sound system would normally make is passed through to the OPL2 instead of the PC speaker and you have many more sound options available to you as well as volume control!
@@ -22,7 +22,7 @@ Put `Midi.HH` and `OPL2.HC/ZC` in the same directory, if using real hardware (mo
 - `AdlibInit` - Sets up a normal square wave instrument similar to the original TOS PC speaker sound.
 - `SetVolume` - Controls volume (pass values 0-100 percent)
 
-### Random instruments for your random GodSong, finding your instrument
+### Random instruments for your random GodSong, finding your 64-bit instrument
 One option is to keep running `RandInst;Beep;` (type it, highlight it (hold `SHIFT` and use `LEFT-ARROW`) copy it with `CTRL-C` and then keep pasting it `CTRL-V` and hitting enter with until you hear something you like.  On TinkerOS you can just re-paste the last run command with `F8`.  When you find something you like, save the 64-bit and you can re-create that same unique 64-bit instrument by passing the 64-bit value to `U64Inst`.  Another option is to play some music on repeat and keep running `RandInst` until you find something you like.
 
 ### How did I make 2^64 different instruments?
